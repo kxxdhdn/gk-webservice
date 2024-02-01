@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="eabba7cf-0621-4947-9b13-716a16fb2a1f" activeEnvironment="Default" name="soap1" resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="&lt;all>"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="b4d05ed3-7a51-4d15-a2d1-8c8972bf15c2" wsaVersion="NONE" name="Soap1ServiceSoapBinding" type="wsdl" bindingName="{http://soapWS/}Soap1ServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/soap1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/soap1.wsdl"><con:part><con:url>file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/soap1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Soap1Service" targetNamespace="http://soapWS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soapWS/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://soapWS/" schemaLocation="soap1_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="direBonjour">
+    <wsdl:part name="parameters" element="tns:direBonjour"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="direBonjourResponse">
+    <wsdl:part name="parameters" element="tns:direBonjourResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Soap1">
+    <wsdl:operation name="direBonjour">
+      <wsdl:input name="direBonjour" message="tns:direBonjour"></wsdl:input>
+      <wsdl:output name="direBonjourResponse" message="tns:direBonjourResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Soap1ServiceSoapBinding" type="tns:Soap1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="direBonjour">
+      <soap:operation soapAction="urn:DireBonjour" style="document"/>
+      <wsdl:input name="direBonjour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="direBonjourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Soap1Service">
+    <wsdl:port name="Soap1Port" binding="tns:Soap1ServiceSoapBinding">
+      <soap:address location="http://localhost:8080/formationWS/services/Soap1Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/soap1_schema1.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://soapWS/" version="1.0" xmlns:tns="http://soapWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="direBonjour" type="tns:direBonjour"/>
+  <xs:element name="direBonjourResponse" type="tns:direBonjourResponse"/>
+  <xs:complexType name="direBonjour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="direBonjourResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/formationWS/services/Soap1Port</con:endpoint></con:endpoints><con:operation id="50d478ca-8f2c-414b-aea5-e8b9b0df27c7" isOneWay="false" action="urn:DireBonjour" name="direBonjour" bindingOperationName="direBonjour" type="Request-Response" outputName="direBonjourResponse" inputName="direBonjour" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5e015955-cfad-4c00-9336-042fd25c30ff" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/formationWS/services/Soap1Port</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soapWS/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:direBonjour>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </soap:direBonjour>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:DireBonjour"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

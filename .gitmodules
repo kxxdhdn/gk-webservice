@@ -1,0 +1,6 @@
+[submodule "gs-producing-web-service"]
+	path = gs-producing-web-service
+	url = https://github.com/kxxdhdn/gs-producing-web-service.git
+[submodule "gs-consuming-web-service"]
+	path = gs-consuming-web-service
+	url = https://github.com/kxxdhdn/gs-consuming-web-service.git

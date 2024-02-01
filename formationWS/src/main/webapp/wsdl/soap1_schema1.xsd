@@ -1,0 +1,19 @@
+<xs:schema xmlns:tns="http://soapWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soapWS/" version="1.0">
+
+  <xs:element name="direBonjour" type="tns:direBonjour"/>
+
+  <xs:element name="direBonjourResponse" type="tns:direBonjourResponse"/>
+
+  <xs:complexType name="direBonjour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="direBonjourResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

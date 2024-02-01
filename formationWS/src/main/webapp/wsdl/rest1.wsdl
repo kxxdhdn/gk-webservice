@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Rest1Service" targetNamespace="http://restWS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://restWS/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://restWS/" schemaLocation="rest1_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="direBonjour">
+    <wsdl:part name="parameters" element="tns:direBonjour">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="direBonjourResponse">
+    <wsdl:part name="parameters" element="tns:direBonjourResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Rest1">
+    <wsdl:operation name="direBonjour">
+      <wsdl:input name="direBonjour" message="tns:direBonjour">
+    </wsdl:input>
+      <wsdl:output name="direBonjourResponse" message="tns:direBonjourResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Rest1ServiceSoapBinding" type="tns:Rest1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="direBonjour">
+      <soap:operation soapAction="urn:DireBonjour" style="document"/>
+      <wsdl:input name="direBonjour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="direBonjourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Rest1Service">
+    <wsdl:port name="Rest1Port" binding="tns:Rest1ServiceSoapBinding">
+      <soap:address location="http://localhost:8080/formationWS/services/Rest1Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

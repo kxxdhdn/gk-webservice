@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="85692665-8d98-4536-a0c7-077b18cf6b2b" activeEnvironment="Default" name="rest1" resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="4b4df4c5-8975-48c4-9c1b-fb3df7545722" wsaVersion="NONE" name="Rest1ServiceSoapBinding" type="wsdl" bindingName="{http://restWS/}Rest1ServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/rest1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/rest1.wsdl"><con:part><con:url>file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/rest1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Rest1Service" targetNamespace="http://restWS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://restWS/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://restWS/" schemaLocation="rest1_schema1.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="direBonjour">
+    <wsdl:part name="parameters" element="tns:direBonjour"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="direBonjourResponse">
+    <wsdl:part name="parameters" element="tns:direBonjourResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Rest1">
+    <wsdl:operation name="direBonjour">
+      <wsdl:input name="direBonjour" message="tns:direBonjour"></wsdl:input>
+      <wsdl:output name="direBonjourResponse" message="tns:direBonjourResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Rest1ServiceSoapBinding" type="tns:Rest1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="direBonjour">
+      <soap:operation soapAction="urn:DireBonjour" style="document"/>
+      <wsdl:input name="direBonjour">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="direBonjourResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Rest1Service">
+    <wsdl:port name="Rest1Port" binding="tns:Rest1ServiceSoapBinding">
+      <soap:address location="http://localhost:8080/formationWS/services/Rest1Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/dhu/mygit/gk-webservice/formationWS/src/main/webapp/wsdl/rest1_schema1.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="unqualified" targetNamespace="http://restWS/" version="1.0" xmlns:tns="http://restWS/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="direBonjour" type="tns:direBonjour"/>
+  <xs:element name="direBonjourResponse" type="tns:direBonjourResponse"/>
+  <xs:complexType name="direBonjour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="direBonjourResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/formationWS/services/Rest1Port</con:endpoint></con:endpoints><con:operation id="5b68d7ff-763f-4c6b-a924-67c2306d6932" isOneWay="false" action="urn:DireBonjour" name="direBonjour" bindingOperationName="direBonjour" type="Request-Response" outputName="direBonjourResponse" inputName="direBonjour" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5d0203c2-f2cc-4f60-9d9e-b00399293c9e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/formationWS/services/Rest1Port</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://restWS/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <res:direBonjour>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </res:direBonjour>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:DireBonjour"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
